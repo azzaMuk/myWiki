@@ -18,6 +18,7 @@ from django.urls import path
 from main import views
 from authentication import views as auth_views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
      path('articles/', views.articles_list, name="articles-list"),
@@ -26,4 +27,6 @@ urlpatterns = [
        path('edit/<int:article_id>', views.edit_article, name="edit-article"),
        path('my-articles/', views.my_articles_list, name="my-articles-list"),
         path('register/', auth_views.register, name="register"),
+         path('login/', auth_views.login_view , name="login"),
+          path('logout/', auth_views.logout_view, name="logout"),
 ]
