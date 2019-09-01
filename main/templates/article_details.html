@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-</head>
-<body>
-    <ul>
-        {% for article in articles %}
-            <li>
-                <a href="{% url 'article-details' article.id %}">
-                    <h1>{{article.title}}</h1>
-                </a>
-                <p>{{article.created_on}}</p>
-            </li>
-        {% endfor %}
-    </ul>
-</body>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{article.title}}</h1>
+    <h6>{{article.author}}</h6>
+    <p>{{article.content}}</p>
+{% endblock content%}
