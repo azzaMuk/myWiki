@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main import views
+from authentication import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,5 @@ urlpatterns = [
       path('create/', views.create_article, name="create-article"),
        path('edit/<int:article_id>', views.edit_article, name="edit-article"),
        path('my-articles/', views.my_articles_list, name="my-articles-list"),
+        path('register/', auth_views.register, name="register"),
 ]
